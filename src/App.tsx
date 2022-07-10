@@ -7,7 +7,7 @@ import { userSlice } from './Store/Reducers/UserSlice';
 
 
 function App() {
-  const {users} = useAppSelector(state => state.userReducer)
+  const {users, isLoading, error} = useAppSelector(state => state.userReducer)
   const dispatch = useAppDispatch()
 
   React.useEffect(() => {
@@ -16,8 +16,9 @@ function App() {
   
   return (
     <div className="App">
+      {isLoading && <h1>Loading in progress...</h1>}
+      {error && <h3>{error}</h3>}
       {JSON.stringify(users, )}
-      
     </div>
   );
 }
