@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       {isLoading && <h1>Loading in progress...</h1>}
       {error && <h3>{error}</h3>}
-      {JSON.stringify(users, )}
+      {JSON.stringify(users, null, 2)}
     </div>
   );
 }
