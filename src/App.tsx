@@ -21,7 +21,6 @@ function App() {
       <div style={{display: 'flex', justifyContent: 'center'}}>
         <PostContainer />
         <PostContainer2 />
-        
       </div>
     </div>
   );
