@@ -1,5 +1,6 @@
 import React from 'react';
 import "./App.css"
+import PostContainer from './Components/PostContainer';
 import { useAppDispatch, useAppSelector } from './Hooks/Redux';
 import { fetchUsers } from './Store/Reducers/ActionsCreaters';
 import { userSlice } from './Store/Reducers/UserSlice';
@@ -16,9 +17,7 @@ function App() {
   
   return (
     <div className="App">
-      {isLoading && <h1>Loading in progress...</h1>}
-      {error && <h3>{error}</h3>}
-      {JSON.stringify(users, null, 2)}
+      <PostContainer />
     </div>
   );
 }
