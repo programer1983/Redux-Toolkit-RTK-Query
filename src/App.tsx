@@ -1,6 +1,7 @@
 import React from 'react';
 import "./App.css"
 import PostContainer from './Components/PostContainer';
+import PostContainer2 from './Components/PostContainer2';
 import { useAppDispatch, useAppSelector } from './Hooks/Redux';
 import { fetchUsers } from './Store/Reducers/ActionsCreaters';
 import { userSlice } from './Store/Reducers/UserSlice';
@@ -17,7 +18,11 @@ function App() {
   
   return (
     <div className="App">
-      <PostContainer />
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <PostContainer />
+        <PostContainer2 />
+        
+      </div>
     </div>
   );
 }

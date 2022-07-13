@@ -3,16 +3,9 @@ import { postAPI } from '../Servicess/PostService'
 import PostItem from './PostItem'
 
 const PostContainer = () => {
-  const [limit, setLimit] = React.useState(10)
-  const {data: posts, error, isLoading} = postAPI.useFetchAllPostsQuery(limit)
+  const {data: posts, error, isLoading} = postAPI.useFetchAllPostsQuery(5)
 
-  React.useEffect(() => {
-    setTimeout(() => {
-       setLimit(3)
-    }, 2000)
-  }, [])
-  
-  
+ 
   return (
     <div>
       <div className='post__list'>
