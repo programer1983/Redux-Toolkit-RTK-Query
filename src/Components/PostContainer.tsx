@@ -4,9 +4,7 @@ import PostItem from './PostItem'
 
 const PostContainer = () => {
   const [limit, setLimit] = React.useState(10)
-  const {data: posts, error, isLoading, refetch} = postAPI.useFetchAllPostsQuery(limit, {
-    pollingInterval: 100,
-  })
+  const {data: posts, error, isLoading, refetch} = postAPI.useFetchAllPostsQuery(limit)
 
   React.useEffect(() => {
     // setTimeout(() => {
