@@ -4,7 +4,9 @@ import PostItem from './PostItem'
 
 const PostContainer = () => {
   const [limit, setLimit] = React.useState(10)
-  const {data: posts, error, isLoading, refetch} = postAPI.useFetchAllPostsQuery(limit)
+  const {data: posts, error, isLoading, refetch} = postAPI.useFetchAllPostsQuery(limit, {
+    pollingInterval: 100,
+  })
 
   React.useEffect(() => {
     // setTimeout(() => {
@@ -16,7 +18,6 @@ const PostContainer = () => {
   return (
     <div>
       <div className='post__list'>
-        <button onClick={() => refetch()}>REFETCH</button>
         {isLoading && <h1>loading in progress...</h1>}
         {error && <h1>An error occurred while loading!</h1>}
         {posts && posts.map((post) =>
